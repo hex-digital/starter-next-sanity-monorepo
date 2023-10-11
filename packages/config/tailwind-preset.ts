@@ -1,9 +1,11 @@
-function maybeSrc(path) {
+import { Config } from 'tailwindcss';
+import tailwindcssAnimate from 'tailwindcss-animate';
+
+function maybeSrc(path: string) {
   return [`./${path}`, `./src/${path}`];
 }
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config: Config = {
   darkMode: ['class'],
   content: [
     ...maybeSrc('app/**/*.{js,ts,jsx,tsx,mdx}'),
@@ -11,7 +13,8 @@ module.exports = {
     ...maybeSrc('hooks/**/*.{js,ts,jsx,tsx,mdx}'),
     ...maybeSrc('lib/**/*.{js,ts,jsx,tsx,mdx}'),
 
-    '../../packages/ui/**/*.{js,ts,jsx,tsx}',
+    '../../packages/ui/components/**/*.{js,ts,jsx,tsx}',
+    '../../packages/ui/lib/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {
@@ -64,12 +67,12 @@ module.exports = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: 0 },
+          from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
+          to: { height: '0' },
         },
       },
       animation: {
@@ -78,5 +81,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [tailwindcssAnimate],
 };
+
+export default config;
