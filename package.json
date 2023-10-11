@@ -1,0 +1,21 @@
+{
+  "name": "starter-next-sanity-monorepo",
+  "version": "1.0.0",
+  "private": "true",
+  "license": "MIT",
+  "description": "",
+  "author": "Hex Digital",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@hexdigital/config-commitlint": "^1.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1"
+  }
+}
