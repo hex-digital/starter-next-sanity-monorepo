@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@packages/tsconfig": "latest",
+    "@packages/tsconfig": "workspace:*",
     "tailwindcss": "^3.3.3",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.2.2"

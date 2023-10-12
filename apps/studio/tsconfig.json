@@ -1,0 +1,9 @@
+{
+  "extends": "@packages/tsconfig/react-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
