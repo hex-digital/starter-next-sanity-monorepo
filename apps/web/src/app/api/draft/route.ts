@@ -5,7 +5,7 @@ import { previewSecretId } from '~/sanity/config/options';
 import { client } from '~/sanity/client';
 import { resolveHref } from '~/sanity/lib/links';
 
-export const token = process.env.SANITY_API_READ_TOKEN;
+const token = process.env.SANITY_API_READ_TOKEN;
 
 export const runtime = 'edge';
 
