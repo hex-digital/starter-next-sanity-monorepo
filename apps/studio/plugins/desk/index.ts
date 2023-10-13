@@ -6,11 +6,6 @@ import {
 } from 'sanity/lib/exports/desk';
 import { ListItemBuilder, StructureBuilder } from 'sanity/desk';
 import homepage from './homepage';
-import aboutUs from './about-us';
-import editorial from './editorial';
-import dataHub from './data-hub';
-import policyPages from './policyPages';
-import conservationTools from './conservationTools';
 import legalPages from './legalPages';
 import globalContent from './globalContent';
 import siteConfig from './siteConfig';
@@ -33,12 +28,6 @@ export const structure: StructureResolver = (S, context) =>
     .title('Content')
     .items([
       homepage(S, context),
-      aboutUs(S, context),
-      editorial(S, context),
-      dataHub(S, context),
-      S.divider(),
-      policyPages(S, context),
-      conservationTools(S, context),
       legalPages(S, context),
       S.divider(),
       globalContent(S, context),
