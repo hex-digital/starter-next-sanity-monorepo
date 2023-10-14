@@ -7,8 +7,6 @@ import { resolveHref } from '~/sanity/lib/links';
 
 const token = process.env.SANITY_API_READ_TOKEN;
 
-export const runtime = 'edge';
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get('secret');
