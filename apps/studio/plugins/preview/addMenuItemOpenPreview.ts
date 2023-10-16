@@ -1,6 +1,6 @@
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
 import { preview } from '../../config';
-import { PREVIEWABLE_DOCUMENT_TYPES, PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS } from '../../schemas';
+import { PREVIEWABLE_DOCUMENT_TYPES, PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS } from '@packages/studio/schemas';
 
 export function addMenuItemOpenPreview() {
   return previewUrl({

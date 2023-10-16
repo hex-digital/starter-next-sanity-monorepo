@@ -4,7 +4,7 @@ import { visionTool } from '@sanity/vision';
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { media } from 'sanity-plugin-media';
 import { title, dataset, projectId, apiVersion } from './config'
-import { schemaTypes } from './schemas';
+import { schemaTypes } from '@packages/studio/schemas';
 import { setupSingletons } from './plugins/singletons'
 import { structure, defaultDocumentNode } from './plugins/desk';
 import { addMenuItemOpenPreview } from './plugins/preview/addMenuItemOpenPreview';

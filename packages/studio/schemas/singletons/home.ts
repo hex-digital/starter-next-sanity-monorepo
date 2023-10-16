@@ -1,5 +1,5 @@
-import { HomeIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { HomeIcon } from '@sanity/icons';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { SINGLETON } from '../constants';
 
 export default defineType({
@@ -66,7 +66,7 @@ export default defineType({
       return {
         subtitle: 'Home',
         title,
-      }
+      };
     },
   },
-})
+});

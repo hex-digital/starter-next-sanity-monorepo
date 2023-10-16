@@ -28,6 +28,7 @@ export const SEO_ANALYSIS_DOCUMENT_TYPES: Array<string> = [
 export const PREVIEWABLE_DOCUMENT_TYPES: Array<string> = [
   SINGLETON.HOME,
   SINGLETON.NAVIGATION,
+  DOCUMENT.LEGAL_PAGES,
 ];
 
 /** Document types that can display a live preview pane but require a slug to do so */

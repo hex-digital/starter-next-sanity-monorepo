@@ -15,6 +15,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@packages/studio": "workspace:*",
     "@packages/tsconfig": "workspace:*",
     "@sanity/icons": "^2.4.1",
     "@sanity/vision": "^3.16.7",

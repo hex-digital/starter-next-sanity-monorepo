@@ -9,10 +9,10 @@ import { client } from '~/sanity/client';
 const builder = imageUrlBuilder(client);
 
 export default function LegalPost({ data }: {
-  data: SanityDocument
+  data?: SanityDocument
 }) {
   if (!data) {
-    console.error(`LegalPost data empty: ${JSON.stringify(data)}`);
+    console.error(`LegalPage data empty: ${JSON.stringify(data)}`);
     return null;
   }
 

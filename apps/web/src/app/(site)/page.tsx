@@ -1,22 +1,18 @@
 import { SanityDocument } from "next-sanity";
-import { draftMode } from 'next/headers';
 import { postsQuery } from "~/sanity/lib/queries";
 import { sanityFetch, token } from "~/sanity/lib/sanityFetch";
 import LegalPages from "~/app/_components/LegalPages";
-import PreviewLegalPages from '~/app/_components/PreviewLegalPages';
+import { PreviewWrapper } from '../_components/Preview/PreviewWrapper';
 
 export default async function Home() {
-  const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
-  const isDraftMode = draftMode().isEnabled;
+  const data = await sanityFetch<SanityDocument[]>({ query: postsQuery });
 
-  if (isDraftMode && token) {
-    return (
-      <>
-        <div>Preview</div>
-        <PreviewLegalPages posts={posts} />
-      </>
-    );
-  }
-
-  return <LegalPages posts={posts} />;
+  return (
+    <PreviewWrapper
+      initialData={data}
+      query={postsQuery}
+    >
+      <LegalPages />
+    </PreviewWrapper>
+  );
 }

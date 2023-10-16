@@ -1,9 +1,9 @@
 import { ListItemBuilder } from 'sanity/lib/exports/desk';
 import { CogIcon } from '@sanity/icons';
 import { BsFillSignpostSplitFill } from 'react-icons/bs';
+import { SINGLETON } from '@packages/studio';
 import { defineStructure } from './utils/defineStructure';
 import { singletonListItem } from './utils/singleton';
-import { SINGLETON } from '../../schemas/constants';
 
 export default defineStructure<ListItemBuilder>((S, context) => {
   const rootTitle = 'Site Config';

@@ -5,12 +5,12 @@ import {
   ViewBuilder
 } from 'sanity/lib/exports/desk';
 import { ListItemBuilder, StructureBuilder } from 'sanity/desk';
+import { DOCUMENT, SINGLETON } from '@packages/studio';
+import { PREVIEWABLE_DOCUMENT_TYPES } from '@packages/studio/schemas';
 import homepage from './homepage';
 import legalPages from './legalPages';
 import globalContent from './globalContent';
 import siteConfig from './siteConfig';
-import { DOCUMENT, SINGLETON } from '../../schemas/constants';
-import { PREVIEWABLE_DOCUMENT_TYPES } from '../../schemas';
 import { previewPane } from '../preview';
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [

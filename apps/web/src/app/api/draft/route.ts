@@ -33,6 +33,7 @@ export async function GET(request: Request) {
   }
 
   const href = resolveHref(documentType!, slug!);
+
   if (!href) {
     return new Response(
       'Unable to resolve preview URL based on the current document type and slug',

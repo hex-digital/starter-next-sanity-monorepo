@@ -1,8 +1,8 @@
 import { ListBuilder, ListItemBuilder } from 'sanity/lib/exports/desk';
 import { EarthGlobeIcon } from '@sanity/icons';
+import { DOCUMENT } from '@packages/studio';
 import { BsFillSignpostSplitFill } from 'react-icons/bs';
 import { defineStructure } from './utils/defineStructure';
-import { DOCUMENT } from '../../schemas/constants';
 
 export default defineStructure<ListItemBuilder>((S, context) => {
   const rootTitle = 'Global Content';
