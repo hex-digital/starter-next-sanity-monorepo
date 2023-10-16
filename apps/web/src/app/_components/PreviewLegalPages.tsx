@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import type { SanityDocument } from "next-sanity";
+import type { SanityDocument } from 'next-sanity';
 import { useLiveQuery } from 'next-sanity/preview';
-import LegalPages from "~/app/_components/LegalPages";
-import { postsQuery } from "~/sanity/lib/queries";
+import LegalPages from '~/app/_components/LegalPages';
+import { postsQuery } from '~/sanity/lib/queries';
 
 export default function PreviewLegalPages({
   posts = [],
@@ -12,5 +12,5 @@ export default function PreviewLegalPages({
 }) {
   const [data] = useLiveQuery(posts, postsQuery);
 
-  return <LegalPages posts={data} />;
+  return <LegalPages posts={data}/>;
 }

@@ -1,17 +1,24 @@
-"use client";
+'use client';
 
 // import Image from "next/image";
-import imageUrlBuilder from "@sanity/image-url";
-import type { SanityDocument } from "next-sanity";
+import imageUrlBuilder from '@sanity/image-url';
+import type { SanityDocument } from 'next-sanity';
 // import { PortableText } from "@portabletext/react";
-import { client } from "~/sanity/client";
+import { client } from '~/sanity/client';
 
 const builder = imageUrlBuilder(client);
 
-export default function LegalPost({ post }: { post: SanityDocument }) {
+export default function LegalPost({ data }: {
+  data: SanityDocument
+}) {
+  if (!data) {
+    console.error(`LegalPost data empty: ${JSON.stringify(data)}`);
+    return null;
+  }
+
   return (
     <div className="container mx-auto prose prose-lg p-4">
-      <h1>{post.title}</h1>
+      <h1>{data.title}</h1>
 
       {/*{post?.mainImage ? (*/}
       {/*  <Image*/}

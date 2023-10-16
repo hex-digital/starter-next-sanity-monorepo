@@ -6,6 +6,7 @@ const nextConfig = {
   ],
   experimental: {
     typedRoutes: true, // See: https://nextjs.org/docs/app/building-your-application/configuring/typescript#statically-typed-links
+    logging: 'verbose',
   },
   images: {
     remotePatterns: [

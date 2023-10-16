@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Inter } from 'next/font/google';
@@ -8,8 +9,8 @@ import { token } from "~/sanity/lib/sanityFetch";
 import '@packages/ui/styles/globals.css';
 import { draftMode } from 'next/headers';
 
-const PreviewProvider = dynamic(() => import('../_components/PreviewProvider'))
-const PreviewBar = dynamic(() => import('../_components/PreviewBar/PreviewBar'));
+const PreviewProvider = dynamic(() => import('../_components/Preview/PreviewProvider'))
+const PreviewBar = dynamic(() => import('../_components/Preview/PreviewBar/PreviewBar'));
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -40,7 +41,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {preview
-          ? <PreviewProvider token={token}>{content}</PreviewProvider>
+          ? (
+            <Suspense fallback={content}>
+              <PreviewProvider token={token}>{content}</PreviewProvider>
+            </Suspense>
+          )
           : content
         }
       </body>

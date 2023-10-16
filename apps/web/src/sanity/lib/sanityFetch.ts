@@ -9,6 +9,7 @@ const DEFAULT_TAGS = [] as string[];
 
 export const token = process.env.SANITY_API_READ_TOKEN || '';
 
+// Utility for fetching data on the server, that can toggle between published and preview drafts
 export async function sanityFetch<QueryResponse>({
   query,
   params = DEFAULT_PARAMS,
@@ -31,11 +32,12 @@ export async function sanityFetch<QueryResponse>({
     .fetch<QueryResponse>(query, params, {
       cache: isDevelopment || isDraftMode ? undefined : 'force-cache',
       ...(isDraftMode && {
+        useCdn: false, // Not sure if we need this? Look more into useCdn
         token: token,
         perspective: 'previewDrafts',
       }),
       next: {
-        ...(isDraftMode && { revalidate: 30 }),
+        ...((isDevelopment || isDraftMode) && { revalidate: 0 }),
         tags,
       },
     });

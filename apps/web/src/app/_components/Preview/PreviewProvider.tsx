@@ -16,7 +16,7 @@ export default function PreviewProvider({
   token: string;
 }) {
   const { client } = suspend(
-    () => import('../../sanity/client'),
+    () => import('../../../sanity/client'),
     [UniqueKey]
   );
   if (!token) {
