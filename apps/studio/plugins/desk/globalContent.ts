@@ -1,8 +1,9 @@
 import { ListBuilder, ListItemBuilder } from 'sanity/lib/exports/desk';
 import { EarthGlobeIcon } from '@sanity/icons';
-import { DOCUMENT } from '@packages/studio';
+import { DOCUMENT, SINGLETON } from '@packages/studio';
 import { BsFillSignpostSplitFill } from 'react-icons/bs';
 import { defineStructure } from './utils/defineStructure';
+import { singletonListItem } from './utils/singleton';
 
 export default defineStructure<ListItemBuilder>((S, context) => {
   const rootTitle = 'Global Content';
@@ -26,5 +27,7 @@ const navigationStructure = defineStructure<ListBuilder>((S, context) => {
   return S.list().title('Navigation Menus').items([
     S.documentTypeListItem(DOCUMENT.NAVIGATION_HEADERS),
     S.documentTypeListItem(DOCUMENT.NAVIGATION_FOOTERS),
+    S.divider(),
+    singletonListItem(S, context, { title: 'Site Config: Navigation', schemaType: SINGLETON.NAVIGATION, icon: BsFillSignpostSplitFill }),
   ]);
 });
