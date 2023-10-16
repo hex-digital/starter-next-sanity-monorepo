@@ -1,6 +1,7 @@
 import { defineField, defineType } from 'sanity';
 import { TbBoxAlignTopFilled } from 'react-icons/tb';
 import { DOCUMENT, OBJECT } from '../../constants';
+import { NavigationActiveBadge } from '../../../badges/NavigationActive';
 
 export default defineType({
   name: DOCUMENT.NAVIGATION_HEADERS,
