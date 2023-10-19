@@ -5,13 +5,13 @@ import { draftMode } from 'next/headers';
 import { Inter } from 'next/font/google';
 import { TailwindIndicator } from '@packages/ui';
 import { siteConfig } from '@packages/config/site';
-import { token } from "~/sanity/lib/sanityFetch";
+import { token } from '~/sanity/lib/sanityFetch';
 
 import '@packages/ui/styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const PreviewProvider = dynamic(() => import('../_components/Preview/PreviewProvider'))
+const PreviewProvider = dynamic(() => import('../_components/Preview/PreviewProvider'));
 const PreviewBar = dynamic(() => import('../_components/Preview/PreviewBar/PreviewBar'));
 
 export const metadata: Metadata = {
@@ -19,17 +19,13 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export default function RootLayout({
- children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children, }: { children: React.ReactNode }) {
   const isDraftMode = draftMode().isEnabled;
   const preview = !!(token && isDraftMode);
 
   const content = (
     <>
-      <TailwindIndicator />
+      <TailwindIndicator/>
       <main>
         {children}
       </main>
@@ -39,18 +35,18 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {preview
-          ? (
-            <Suspense fallback={content}>
-              <PreviewProvider token={token}>
-                {content}
-              </PreviewProvider>
-            </Suspense>
-          )
-          : content
-        }
-      </body>
+    <body className={inter.className}>
+    {preview
+      ? (
+        <Suspense fallback={content}>
+          <PreviewProvider token={token}>
+            {content}
+          </PreviewProvider>
+        </Suspense>
+      )
+      : content
+    }
+    </body>
     </html>
   );
 }
