@@ -14,11 +14,11 @@
     "noUnusedParameters": false,
     "preserveWatchOutput": true,
     "skipLibCheck": true,
-    "strict": true
-    // Following rules were in old tsconfig but have been disabled for now for review.
-    // If we decide we need them, add them, otherwise delete them.
-    //    "importHelpers": true
-    //    "sourceMap": true
+    "strict": true,
+    // <https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#verbatimmodulesyntax>
+    // Any imports or exports without a type modifier are left around.
+    // Anything that uses the type modifier is dropped entirely.
+    "verbatimModuleSyntax": true,
   },
   "exclude": ["node_modules"],
   "ts-node": {
