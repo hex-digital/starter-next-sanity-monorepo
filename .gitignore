@@ -6,7 +6,6 @@ node_modules
 .DS_Store
 dist
 .output
-.env
 .vscode/*
 !.vscode/settings.json
 .idea
