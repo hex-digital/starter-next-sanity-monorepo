@@ -2,6 +2,7 @@ export enum DOCUMENT {
   LEGAL_PAGES = 'legalPages',
   NAVIGATION_HEADERS = 'navigation.headers',
   NAVIGATION_FOOTERS = 'navigation.footers',
+  ANNOUNCEMENTS = 'announcements',
   MEDIA_TAG = 'media.tag',
 }
 
@@ -13,4 +14,5 @@ export enum OBJECT {
 export enum SINGLETON {
   HOME = 'home',
   NAVIGATION = 'navigation',
+  ANNOUNCEMENT = 'announcement',
 }

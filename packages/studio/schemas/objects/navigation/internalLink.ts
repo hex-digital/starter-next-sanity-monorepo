@@ -1,6 +1,6 @@
 import { defineField } from 'sanity';
 import { LinkIcon } from '@sanity/icons';
-import { INTERNAL_LINK_TYPES } from '../../schemasConfig';
+import { INTERNAL_LINK_TYPES } from '../../config';
 import { OBJECT } from '../../constants';
 
 const name = OBJECT.NAVIGATION_LINK_INTERNAL;

@@ -1,6 +1,7 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 import { EnvelopeIcon } from '@sanity/icons';
 import { DOCUMENT } from '../constants';
+import { defineSlugField } from '../../utils/defineSlugField';
 
 export default defineType({
   name: DOCUMENT.LEGAL_PAGES,
@@ -15,11 +16,6 @@ export default defineType({
       type: 'string',
       validation: (rule) => rule.required(),
     }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      validation: (rule) => rule.required(),
-    }),
+    defineSlugField(),
   ],
 })

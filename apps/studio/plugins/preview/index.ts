@@ -1,9 +1,11 @@
 import { StructureBuilder } from 'sanity/desk';
 import Iframe from 'sanity-plugin-iframe-pane';
 import { resolvePreviewUrl } from '../../utils/resolvePreviewUrl';
-import { preview } from '../../config';
+import { options } from '../../config/options';
 
 export function previewPane(S: StructureBuilder) {
+  const { preview } = options;
+
   return S.view
     .component(Iframe)
     .title('Preview')

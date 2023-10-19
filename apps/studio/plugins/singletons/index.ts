@@ -3,7 +3,7 @@
  */
 
 import { DocumentActionComponent, PluginOptions } from 'sanity';
-import { LOCKED_DOCUMENT_TYPES } from '@packages/studio/schemas';
+import { LOCKED_DOCUMENT_TYPES } from '@packages/studio/schemas/config';
 
 export function setupSingletons(): PluginOptions {
   return {

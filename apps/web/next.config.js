@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [
+    "@packages/studio",
     "@packages/ui",
   ],
   experimental: {

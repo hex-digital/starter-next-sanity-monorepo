@@ -6,7 +6,7 @@ import {
 } from 'sanity/lib/exports/desk';
 import { ListItemBuilder, StructureBuilder } from 'sanity/desk';
 import { DOCUMENT, SINGLETON } from '@packages/studio';
-import { PREVIEWABLE_DOCUMENT_TYPES } from '@packages/studio/schemas';
+import { PREVIEWABLE_DOCUMENT_TYPES } from '@packages/studio/schemas/config';
 import homepage from './homepage';
 import legalPages from './legalPages';
 import globalContent from './globalContent';
@@ -16,10 +16,12 @@ import { previewPane } from '../preview';
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   SINGLETON.HOME,
   SINGLETON.NAVIGATION,
+  SINGLETON.ANNOUNCEMENT,
   DOCUMENT.LEGAL_PAGES,
   DOCUMENT.MEDIA_TAG,
   DOCUMENT.NAVIGATION_HEADERS,
   DOCUMENT.NAVIGATION_FOOTERS,
+  DOCUMENT.ANNOUNCEMENTS,
 ];
 
 export const structure: StructureResolver = (S, context) =>
