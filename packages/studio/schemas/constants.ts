@@ -15,4 +15,5 @@ export enum SINGLETON {
   HOME = 'home',
   NAVIGATION = 'navigation',
   ANNOUNCEMENT = 'announcement',
+  CONFIG_SEO = 'config.seo',
 }

@@ -1,4 +1,4 @@
-import { ListItemBuilder } from 'sanity/lib/exports/desk';
+import type { ListItemBuilder } from 'sanity/desk';
 import { DocumentsIcon } from '@sanity/icons';
 import { defineStructure } from './utils/defineStructure';
 

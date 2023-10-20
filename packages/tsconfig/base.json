@@ -18,7 +18,7 @@
     // <https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/#verbatimmodulesyntax>
     // Any imports or exports without a type modifier are left around.
     // Anything that uses the type modifier is dropped entirely.
-    "verbatimModuleSyntax": true,
+//     "verbatimModuleSyntax": true,
   },
   "exclude": ["node_modules"],
   "ts-node": {

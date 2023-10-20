@@ -1,4 +1,4 @@
-import { StructureBuilder } from 'sanity/lib/exports/desk';
+import type { StructureBuilder } from 'sanity/desk';
 import { CircleIcon } from '@sanity/icons'
 
 export function placeholder(S: StructureBuilder, title: string, icon?: any) {

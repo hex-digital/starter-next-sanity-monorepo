@@ -2,7 +2,7 @@
  * This plugin contains all the logic for setting up the singletons
  */
 
-import { DocumentActionComponent, PluginOptions } from 'sanity';
+import type { DocumentActionComponent, PluginOptions } from 'sanity';
 import { LOCKED_DOCUMENT_TYPES } from '@packages/studio/schemas/config';
 
 export function setupSingletons(): PluginOptions {
@@ -28,7 +28,6 @@ export function setupSingletons(): PluginOptions {
               action !== 'duplicate' && action !== 'unpublish' && action !== 'delete'
           )
         }
-
 
         return prev
       },

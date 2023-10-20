@@ -1,4 +1,4 @@
-import { ListBuilder, ListItemBuilder } from 'sanity/lib/exports/desk';
+import type { ListBuilder, ListItemBuilder } from 'sanity/desk';
 import { EarthGlobeIcon } from '@sanity/icons';
 import { DOCUMENT, SINGLETON } from '@packages/studio';
 import { BsFillSignpostSplitFill, BsMegaphone } from 'react-icons/bs';

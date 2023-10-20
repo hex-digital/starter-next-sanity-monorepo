@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import {defineArrayMember, defineField, defineType} from 'sanity';
 import { BsMegaphone } from 'react-icons/bs';
 import { DOCUMENT } from '../../constants';
 
@@ -20,7 +20,35 @@ export default defineType({
       name: 'items',
       type: 'array',
       description: 'The announcement text to display - keep it to a single line',
-      of: [{ type: 'block' }],
+      of: [
+        // Paragraphs
+        defineArrayMember({
+          type: 'block',
+          lists: [],
+          styles: [],
+          marks: {
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'Url',
+                  },
+                ],
+              },
+            ],
+            decorators: [
+              { title: 'Italic', value: 'em' },
+              { title: 'Strong', value: 'strong' },
+            ],
+          },
+        }),
+      ],
+      validation: (rule) => rule.max(155).required(),
     }),
   ],
 });

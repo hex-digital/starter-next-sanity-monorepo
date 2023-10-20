@@ -1,7 +1,5 @@
-import { ListItemBuilder } from 'sanity/desk';
-
-import { StructureBuilder } from 'sanity/lib/exports/desk';
-import { ConfigContext } from 'sanity';
+import type { ListItemBuilder, StructureBuilder } from 'sanity/desk';
+import type { ConfigContext } from 'sanity';
 import { defaultViews } from '../index';
 
 interface SingletonListItemData {
