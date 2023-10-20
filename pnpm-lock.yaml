@@ -32,6 +32,9 @@ importers:
       '@sanity/icons':
         specifier: ^2.4.1
         version: 2.6.0(react@18.2.0)
+      '@sanity/ui':
+        specifier: ^1.8.2
+        version: 1.8.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@5.3.11)
       '@sanity/vision':
         specifier: ^3.16.7
         version: 3.18.1(@babel/runtime@7.23.2)(@codemirror/lint@6.4.2)(@codemirror/state@6.3.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.1.0)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@5.3.11)
@@ -181,15 +184,36 @@ importers:
       '@sanity/icons':
         specifier: ^2.4.1
         version: 2.6.0(react@18.2.0)
+      '@sanity/ui':
+        specifier: ^1.8.2
+        version: 1.8.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
       react-icons:
         specifier: ^4.11.0
         version: 4.11.0(react@18.2.0)
       sanity:
         specifier: ^3.16.0
-        version: 3.18.1(@types/node@20.5.1)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+        version: 3.18.1(@types/node@20.8.7)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
       sanity-plugin-prefixed-slug:
         specifier: ^2.0.0
         version: 2.0.0(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.18.1)(styled-components@5.3.11)
+    devDependencies:
+      '@packages/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      '@types/node':
+        specifier: ^20.8.4
+        version: 20.8.7
+      '@types/react':
+        specifier: ^18.2.28
+        version: 18.2.29
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+
+  packages/studio-seo: {}
 
   packages/tsconfig: {}
 

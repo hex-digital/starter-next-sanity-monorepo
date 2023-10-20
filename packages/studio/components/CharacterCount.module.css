@@ -1,0 +1,13 @@
+.textInput {
+  border: 1.5px solid #E1E8FA;
+  border-radius: 3px;
+  color: #6F7FB3;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 1px 3px;
+}
+
+.textInputWarning {
+  border-color: #FBF4CE;
+  color: #8B8775;
+}

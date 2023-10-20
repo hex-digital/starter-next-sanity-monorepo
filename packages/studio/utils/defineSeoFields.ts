@@ -1,4 +1,6 @@
 import { defineField } from 'sanity';
+import { StringInput } from '../components/StringInput';
+import { TextInput } from '../components/TextInput';
 
 export interface Config {
   group?: string
@@ -25,7 +27,8 @@ export function defineSeoFields({ group, description, collapsible }: Config = {}
           title: 'Title for search & social sharing (meta title)',
           name: 'metaTitle',
           type: 'string',
-          description: 'Make it as enticing as possible to capture users in Google + social feeds.',
+          components: { input: StringInput },
+          description: 'Make it as enticing as possible to capture users in Google + social feeds',
           validation: (rule) => [
             rule.min(15).warning('Title should be at least 15 characters long for maximum effect.'),
             rule.max(70).warning('Title should be less than 70 characters long for maximum effect.'),
@@ -35,8 +38,11 @@ export function defineSeoFields({ group, description, collapsible }: Config = {}
           title: 'Short Paragraph for search & social sharing (meta description)',
           name: 'metaDescription',
           type: 'text',
-          description: 'Optional but highly encouraged to capture more visitors from Google and social.',
+          components: { input: TextInput },
+          description: 'Optional, highly encouraged to capture more visitors from Google and social',
+          rows: 2,
           validation: (rule) => [
+            rule.min(15).warning('Description should be at least 15 characters long for maximum effect.'),
             rule.max(160).warning('Description should be less than 160 characters long for maximum effect.'),
           ],
         }),
