@@ -21,6 +21,13 @@ export default defineType({
       type: 'string',
       validation: (rule) => rule.required(),
     }),
+
+    {
+      name: 'isHighlighted',
+      title: 'Highlighted',
+      type: 'boolean',
+      initialValue: false
+    },
     ...defineMetaFields(),
     ...defineSeoFields(),
   ],

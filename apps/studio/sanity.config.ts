@@ -1,8 +1,8 @@
 import './config/context'; // Must be first import to set up context for packages
-import { defineConfig } from 'sanity';
+import { defineConfig, isStringInputProps } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
-import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
+import {unsplashAssetSource, unsplashImageAsset} from 'sanity-plugin-asset-source-unsplash'
 import { media } from 'sanity-plugin-media';
 import { options } from './config/options'
 import { DOCUMENT } from '@packages/studio';
@@ -11,6 +11,7 @@ import { NavigationActiveBadge } from '@packages/studio/badges/NavigationActive'
 import { setupSingletons } from './plugins/singletons'
 import { structure, defaultDocumentNode } from './plugins/desk';
 import { addMenuItemOpenPreview } from './plugins/preview/addMenuItemOpenPreview';
+import { StringInput } from "@packages/studio/components/StringInput";
 
 const { title, projectId, dataset, apiVersion } = options;
 

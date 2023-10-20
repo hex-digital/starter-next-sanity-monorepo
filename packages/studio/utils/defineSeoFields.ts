@@ -50,7 +50,7 @@ export function defineSeoFields({ group, description, collapsible }: Config = {}
           title: 'Social Image',
           name: 'socialImage',
           type: 'image',
-          description: 'Choose a beautiful and inviting, high-res image (1080p or even 4k). This will show when sharing on social media or in WhatsApp.',
+          description: 'Choose a beautiful and inviting, high-res image (1080p or even 4k). This will show when sharing on social media or in WhatsApp. Recommended size: 1200x630 (PNG or JPG)',
         }),
       ],
     }
