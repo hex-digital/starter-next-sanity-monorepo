@@ -11,7 +11,8 @@ import { NavigationActiveBadge } from '@packages/studio/badges/NavigationActive'
 import { setupSingletons } from './plugins/singletons'
 import { structure, defaultDocumentNode } from './plugins/desk';
 import { addMenuItemOpenPreview } from './plugins/preview/addMenuItemOpenPreview';
-import { StringInput } from "@packages/studio/components/StringInput";
+import { StringInput } from '@packages/studio/components/StringInput';
+import { noteField } from 'sanity-plugin-note-field';
 
 const { title, projectId, dataset, apiVersion } = options;
 
@@ -24,6 +25,7 @@ export default defineConfig({
   apiVersion,
 
   plugins: [
+    noteField(),
     deskTool({
       name: 'content',
       title: 'Content',

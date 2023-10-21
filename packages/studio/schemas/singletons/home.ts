@@ -20,7 +20,6 @@ export default defineType({
     },
   ],
   fields: [
-    ...defineMetaFields(),
     ...defineSeoFields(),
   ],
   preview: {

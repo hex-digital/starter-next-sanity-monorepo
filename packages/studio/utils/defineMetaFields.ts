@@ -1,9 +1,20 @@
 import { defineField } from 'sanity';
 import { defineSlugField } from './defineSlugField';
 
-export function defineMetaFields() {
+interface Options {
+  canChangeSlug?: boolean
+};
+
+export function defineMetaFields(options: Options = {}) {
+  const opts = {
+    canChangeSlug: true,
+    ...options,
+  };
+
+  const slugField = opts.canChangeSlug ? [defineSlugField()] : [];
+
   return [
-    defineSlugField(),
+    ...slugField,
     defineField({
       title: 'Page Visibility',
       name: 'pageVisibility',

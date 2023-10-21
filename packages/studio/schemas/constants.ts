@@ -1,5 +1,6 @@
 export enum DOCUMENT {
   LEGAL_PAGES = 'legalPages',
+  REDIRECTS = 'redirects',
   NAVIGATION_HEADERS = 'navigation.headers',
   NAVIGATION_FOOTERS = 'navigation.footers',
   ANNOUNCEMENTS = 'announcements',
@@ -9,6 +10,7 @@ export enum DOCUMENT {
 export enum OBJECT {
   NAVIGATION_LINK_INTERNAL = 'link.internal',
   NAVIGATION_LINK_EXTERNAL = 'link.external',
+  NAVIGATION_LINK = 'link',
 }
 
 export enum SINGLETON {

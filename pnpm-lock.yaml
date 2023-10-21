@@ -62,6 +62,9 @@ importers:
       sanity-plugin-media:
         specifier: ^2.2.2
         version: 2.2.2(@types/react@18.2.29)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.18.1)(styled-components@5.3.11)
+      sanity-plugin-note-field:
+        specifier: ^2.0.2
+        version: 2.0.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.18.1)(styled-components@5.3.11)
       sanity-plugin-prefixed-slug:
         specifier: ^2.0.0
         version: 2.0.0(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.18.1)(styled-components@5.3.11)
@@ -196,6 +199,9 @@ importers:
       sanity:
         specifier: ^3.16.0
         version: 3.18.1(@types/node@20.8.7)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+      sanity-plugin-note-field:
+        specifier: ^2.0.2
+        version: 2.0.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.18.1)(styled-components@5.3.11)
       sanity-plugin-prefixed-slug:
         specifier: ^2.0.0
         version: 2.0.0(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.18.1)(styled-components@5.3.11)
@@ -7791,6 +7797,25 @@ packages:
       - '@types/react'
       - react-is
       - react-native
+    dev: false
+
+  /sanity-plugin-note-field@2.0.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.18.1)(styled-components@5.3.11):
+    resolution: {integrity: sha512-Dbjm3FwL50PjDrgY7Sxa3DiR2yMWHm88IzmuGoj2EVY8KIZ0YUfwKc9oqT1l4GzI8jRZZ2ySoMxUOcWUq4BqpA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: ^18
+      sanity: ^3
+    dependencies:
+      '@sanity/incompatible-plugin': 1.0.4(react-dom@18.2.0)(react@18.2.0)
+      '@sanity/ui': 1.8.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+      lodash: 4.17.21
+      prop-types: 15.8.1
+      react: 18.2.0
+      sanity: 3.18.1(@types/node@20.5.1)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+    transitivePeerDependencies:
+      - react-dom
+      - react-is
+      - styled-components
     dev: false
 
   /sanity-plugin-prefixed-slug@2.0.0(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.18.1)(styled-components@5.3.11):

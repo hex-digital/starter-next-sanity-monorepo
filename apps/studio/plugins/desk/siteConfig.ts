@@ -5,6 +5,7 @@ import { BsFillSignpostSplitFill, BsMegaphone } from 'react-icons/bs';
 import { SINGLETON } from '@packages/studio';
 import { defineStructure } from './utils/defineStructure';
 import { singletonListItem } from './utils/singleton';
+import redirects from "./redirects";
 
 export default defineStructure<ListItemBuilder>((S, context) => {
   const rootTitle = 'Site Config';
@@ -20,7 +21,7 @@ export default defineStructure<ListItemBuilder>((S, context) => {
           singletonListItem(S, context, { title: 'Announcement', schemaType: SINGLETON.ANNOUNCEMENT, icon: BsMegaphone }),
           S.divider(),
           singletonListItem(S, context, { title: 'SEO + Social', schemaType: SINGLETON.CONFIG_SEO, icon: GrSearch }),
-
+          redirects(S, context),
         ])
     );
 });
