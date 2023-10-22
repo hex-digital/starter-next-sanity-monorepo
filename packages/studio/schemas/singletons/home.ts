@@ -1,8 +1,8 @@
 import { HomeIcon } from '@sanity/icons';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { SINGLETON } from '../constants';
-import {defineSeoFields} from "../../utils/defineSeoFields";
-import {defineMetaFields} from "../../utils/defineMetaFields";
+import {defineSeoFields} from "../utils/defineSeoFields";
+import {defineMetaFields} from "../utils/defineMetaFields";
 
 export default defineType({
   name: SINGLETON.HOME,

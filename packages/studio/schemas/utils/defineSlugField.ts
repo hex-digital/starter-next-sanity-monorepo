@@ -1,6 +1,6 @@
 import { defineField } from 'sanity';
 import { SlugInput } from 'sanity-plugin-prefixed-slug';
-import { getContext } from '../index';
+import { getContext } from '../../index';
 
 export function defineSlugField(schemaSlugField?: Parameters<typeof defineField>[0]) {
   const { preview } = getContext();

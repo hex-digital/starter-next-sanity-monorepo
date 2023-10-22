@@ -5,9 +5,17 @@
   font-size: 12px;
   font-weight: bold;
   padding: 1px 3px;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: #575f73;
+  }
 }
 
 .textInputWarning {
   border-color: #FBF4CE;
   color: #8B8775;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: #575134;
+  }
 }

@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 import { EnvelopeIcon } from '@sanity/icons';
 import { DOCUMENT } from '../constants';
-import { defineMetaFields } from '../../utils/defineMetaFields';
-import { defineSeoFields } from '../../utils/defineSeoFields';
+import { defineMetaFields } from '../utils/defineMetaFields';
+import { defineSeoFields } from '../utils/defineSeoFields';
 
 export default defineType({
   name: DOCUMENT.LEGAL_PAGES,
@@ -16,18 +16,11 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      description: 'For internal use only',
+      description: 'For internal use only, to help identify this page in the list of pages',
       title: 'Title',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
-
-    {
-      name: 'isHighlighted',
-      title: 'Highlighted',
-      type: 'boolean',
-      initialValue: false
-    },
     ...defineMetaFields(),
     ...defineSeoFields(),
   ],
@@ -38,8 +31,7 @@ export default defineType({
       visibility: 'pageVisibility',
     },
     prepare({ title, slug, visibility }) {
-      const subtitle = [];
-      if (visibility !== 'public') { subtitle.push(visibility); }
+      const subtitle = [visibility.charAt(0).toUpperCase() + visibility.slice(1)];
       if (slug !== undefined) { subtitle.push(`/${slug}`); }
 
       return {

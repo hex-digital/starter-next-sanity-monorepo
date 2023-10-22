@@ -6,14 +6,16 @@ import type {
   ListItemBuilder,
   StructureBuilder,
 } from 'sanity/desk';
+import { LuPencilLine } from 'react-icons/lu';
 import { DOCUMENT, SINGLETON } from '@packages/studio';
-import { PREVIEWABLE_DOCUMENT_TYPES } from '@packages/studio/schemas/config';
+import { PREVIEWABLE_DOCUMENT_TYPES, SEO_PREVIEW_DOCUMENT_TYPES } from '@packages/studio/schemas/config';
 import homepage from './homepage';
 import legalPages from './legalPages';
 import globalContent from './globalContent';
 import siteConfig from './siteConfig';
 import { previewPane } from '../preview';
-import {JsonPane} from "../json-pane";
+import { seoPreviewPane } from '../seo-pane';
+import { JsonPane } from '../json-pane';
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   SINGLETON.HOME,
@@ -52,10 +54,14 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, options) => 
 };
 
 export function defaultViews(S: StructureBuilder, schemaType: string): Array<View | ViewBuilder> {
-  const views:  Array<View | ViewBuilder> = [S.view.form(), JsonPane(S)];
+  const views:  Array<View | ViewBuilder> = [S.view.form().icon(LuPencilLine), JsonPane(S)];
 
   if (PREVIEWABLE_DOCUMENT_TYPES.includes(schemaType)) {
     views.push(previewPane(S));
+  }
+
+  if (SEO_PREVIEW_DOCUMENT_TYPES.includes(schemaType)) {
+    views.push(seoPreviewPane(S));
   }
 
   return views;

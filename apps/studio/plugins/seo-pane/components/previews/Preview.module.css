@@ -1,0 +1,70 @@
+.seoItem {
+  --titlePadding: 1rem;
+  --titleFontSize: 1rem;
+  --titleLineHeight: 1.25;
+
+  --contentPadding: 1.5rem;
+  --contentBgColor: rgb(247, 247, 247);
+  --contentBorderColor: rgba(86, 89, 94, 0.25);
+  --cardBorderRadius: 6px;
+
+  --imagePlaceholderBgColor: rgb(137, 139, 142);
+}
+
+.seoItem {
+  margin: 0;
+}
+
+.seoItemTitle {
+  align-items: center;
+  display: flex;
+  margin: 0;
+  padding: var(--titlePadding);
+  font-size: var(--titleFontSize);
+  line-height: var(--titleLineHeight);
+}
+
+.seoItemLogo {
+  margin-right: 16px;
+}
+
+.seoItemContent {
+  display: flex;
+  overflow: auto;
+  padding: var(--contentPadding);
+  background-color: var(--contentBgColor);
+  border-top: 1px solid var(--contentBorderColor);
+  border-bottom: 1px solid var(--contentBorderColor);
+}
+
+.seoItemCard {
+  margin: 0 !important;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #fff;
+  border: 1px solid rgb(171, 172, 175);
+  padding: 1rem;
+  min-width: 460px;
+  border-radius: var(--cardBorderRadius);
+}
+
+/* Image Placeholder */
+.imagePlaceholder {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 52.5%;
+  background: var(--imagePlaceholderBgColor);
+}
+
+.imagePlaceholder::after {
+  content: "no photo set!";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transform: translateY(-50%);
+}

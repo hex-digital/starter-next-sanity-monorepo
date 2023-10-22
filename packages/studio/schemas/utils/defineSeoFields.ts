@@ -1,6 +1,6 @@
 import { defineField } from 'sanity';
-import { StringInput } from '../components/StringInput';
-import { TextInput } from '../components/TextInput';
+import { StringInput } from '../../components/StringInput';
+import { TextInput } from '../../components/TextInput';
 
 export interface Config {
   group?: string
