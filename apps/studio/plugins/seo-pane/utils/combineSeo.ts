@@ -1,4 +1,7 @@
-export function combineSeo(defaultSeo, pageSeo, slug?: string) {
+
+import type { SeoSocialData, SeoDataFlattened, PageSeoData } from '@packages/studio/types';
+
+export function combineSeo(defaultSeo: SeoDataFlattened, pageSeo: SeoSocialData, slug?: string): PageSeoData {
   const pageSlug = slug ? `/${slug}` : '';
 
   let metaTitle = pageSeo.metaTitle || defaultSeo.metaTitle;

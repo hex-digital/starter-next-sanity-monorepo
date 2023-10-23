@@ -31,44 +31,33 @@ export function FacebookSharePreview(props: Props) {
   const canShowPreview = !!metaTitle;
 
   return (
-    <div className={preview.seoItem}>
-      <h3 className={preview.seoItemTitle}><BsFacebook className={preview.seoItemLogo} />Facebook share preview</h3>
-      <div className={preview.seoItemContent}>
-        {canShowPreview ? (
-          <div className={preview.seoItemCard}>
-            <div className={facebook.facebookWrapper} style={{ width }}>
-              <div className={facebook.facebookImageContainer}>
-                {shareImage ? (
-                  <img
-                    className={facebook.facebookCardImage}
-                    src={urlFor(shareImage)
-                      .width(1200)
-                      .height(630)
-                      .url()}
-                  />
-                ) : (
-                  <span className={preview.imagePlaceholder} />
-                )}
-              </div>
-              <div className={facebook.facebookCardContent}>
-                <div className={facebook.facebookCardUrl}>
-                  {shareUrl}
-                </div>
-                <div className={facebook.facebookCardTitle}>
-                  <a href={pageUrl} target="_blank">
-                    {metaTitle}
-                  </a>
-                </div>
-                {metaDescription && (
-                  <div className={facebook.facebookCardDescription}>
-                    {metaDescription}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+    <div className={facebook.facebookWrapper} style={{ width }}>
+      <div className={facebook.facebookImageContainer}>
+        {shareImage ? (
+          <img
+            className={facebook.facebookCardImage}
+            src={urlFor(shareImage)
+              .width(1200)
+              .height(630)
+              .url()}
+          />
         ) : (
-          <p>Please add a title and fill out your SEO fields first.</p>
+          <span className={preview.imagePlaceholder} />
+        )}
+      </div>
+      <div className={facebook.facebookCardContent}>
+        <div className={facebook.facebookCardUrl}>
+          {shareUrl}
+        </div>
+        <div className={facebook.facebookCardTitle}>
+          <a href={pageUrl} target="_blank">
+            {metaTitle}
+          </a>
+        </div>
+        {metaDescription && (
+          <div className={facebook.facebookCardDescription}>
+            {metaDescription}
+          </div>
         )}
       </div>
     </div>

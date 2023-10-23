@@ -1,19 +1,31 @@
 import { useEffect, useState } from 'react';
+import { useClient } from 'sanity';
+import { BsGoogle, BsFacebook } from 'react-icons/bs';
+import { RiTwitterXFill } from 'react-icons/ri';
+import { SINGLETON } from '@packages/studio';
+import type { SeoData, SeoSocialData } from '@packages/studio/types';
 import { GoogleSearchResult } from './previews/GoogleSearchResult/GoogleSearchResult';
 import { TwitterCardPreview } from './previews/TwitterCardPreview/TwitterCardPreview';
 import { FacebookSharePreview } from './previews/FacebookSharePreview/FacebookSharePreview';
-// import FacebookShare from './previews/FacebookSharePreview';
 import { options as opts } from '../../../config/options';
-
-import { useClient } from 'sanity';
-import { SINGLETON } from '@packages/studio';
 import { combineSeo } from '../utils/combineSeo';
+import { SeoPreviewCard } from './SeoPreviewCard';
 
-export function SeoPreviewPane({ options, document }) {
+interface Props {
+  document: {
+    displayed: {
+      seoSocial: SeoSocialData
+      slug?: { current: string }
+    }
+  }
+  options: never
+}
+
+export function SeoPreviewPane({ document, options }: Props) {
   const sanityClient = useClient({ apiVersion: opts.apiVersion });
 
   const { displayed } = document;
-  const [defaultSeo, setDefaultSeo] = useState({});
+  const [defaultSeo, setDefaultSeo] = useState<SeoData | {}>({});
 
   useEffect(() => {
     let shouldUpdateSeo = true;
@@ -44,10 +56,12 @@ export function SeoPreviewPane({ options, document }) {
 
   const { seoSocial, slug } = displayed;
 
+  const { seoSocial: defaultSeoSocial, ...seoRest } = defaultSeo;
+
   const seo = combineSeo(
     {
-      ...defaultSeo,
-      ...defaultSeo.seoSocial,
+      ...seoRest,
+      ...defaultSeoSocial,
     },
     {
       ...seoSocial,
@@ -57,10 +71,17 @@ export function SeoPreviewPane({ options, document }) {
 
   return (
     <>
-      {/*<pre>{JSON.stringify(defaultSeo, null, 2)}</pre>*/}
-      <GoogleSearchResult seo={seo} />
-      <TwitterCardPreview seo={seo} />
-      <FacebookSharePreview seo={seo} />
+      <SeoPreviewCard canShowPreview={!!seo.metaTitle} type={'Google search result'} Icon={BsGoogle}>
+        <GoogleSearchResult seo={seo}/>
+      </SeoPreviewCard>
+
+      <SeoPreviewCard canShowPreview={!!seo.shareImage} type={'Twitter / X post'} Icon={RiTwitterXFill}>
+        <TwitterCardPreview seo={seo}/>
+      </SeoPreviewCard>
+
+      <SeoPreviewCard canShowPreview={!!seo.metaTitle} type={'Facebook share'} Icon={BsFacebook}>
+        <FacebookSharePreview seo={seo}/>
+      </SeoPreviewCard>
     </>
   );
 }
