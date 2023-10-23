@@ -1,43 +1,22 @@
-import { defineField, defineType } from 'sanity';
-import { EnvelopeIcon } from '@sanity/icons';
+import { defineType } from 'sanity';
+import { DocumentsIcon } from '@sanity/icons';
 import { DOCUMENT } from '../constants';
 import { defineMetaFields } from '../utils/defineMetaFields';
 import { defineSeoFields } from '../utils/defineSeoFields';
+import { defaultPreview } from '../utils/defaultPreview';
 
 export default defineType({
   name: DOCUMENT.LEGAL_PAGES,
   title: 'Legal Pages',
   type: 'document',
-  icon: EnvelopeIcon,
+  icon: DocumentsIcon,
   groups: [{
     title: 'SEO',
     name: 'seo',
   }],
   fields: [
-    defineField({
-      name: 'title',
-      description: 'For internal use only, to help identify this page in the list of pages',
-      title: 'Title',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
     ...defineMetaFields(),
     ...defineSeoFields(),
   ],
-  preview: {
-    select: {
-      title: 'title',
-      slug: 'slug.current',
-      visibility: 'pageVisibility',
-    },
-    prepare({ title, slug, visibility }) {
-      const subtitle = [visibility.charAt(0).toUpperCase() + visibility.slice(1)];
-      if (slug !== undefined) { subtitle.push(`/${slug}`); }
-
-      return {
-        title,
-        subtitle: subtitle.join(' - '),
-      };
-    },
-  },
+  preview: defaultPreview(),
 })
