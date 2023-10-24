@@ -21,6 +21,7 @@ import editorial from './editorial';
 import dataHub from './data-hub';
 import policyPages from './policyPages';
 import conservationTools from './conservationTools';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   SINGLETON.HOME,
@@ -40,6 +41,8 @@ export const structure: StructureResolver = (S, context) =>
   S.list()
     .title('Content')
     .items([
+      S.listItem().title('Guide').icon(AiOutlineInfoCircle),
+      S.divider(),
       homepage(S, context),
       aboutUs(S, context),
       editorial(S, context),
