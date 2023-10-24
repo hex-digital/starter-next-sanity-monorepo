@@ -26,8 +26,6 @@ export function GoogleSearchResult(props: Props) {
   const width = props.width || 580;
   const { favicon, siteTitle, siteUrl, pageUrl, metaTitle, metaDescription } = props.seo;
 
-  const canShowPreview = !!metaTitle;
-
   return (
     <div className={google.googleWrapper} style={{ width }}>
       <div className={google.googleUrlBar}>
