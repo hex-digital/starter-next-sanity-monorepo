@@ -16,6 +16,11 @@ import siteConfig from './siteConfig';
 import { previewPane } from '../preview';
 import { seoPreviewPane } from '../seo-pane';
 import { JsonPane } from '../json-pane';
+import aboutUs from './about-us';
+import editorial from './editorial';
+import dataHub from './data-hub';
+import policyPages from './policyPages';
+import conservationTools from './conservationTools';
 
 const DOCUMENT_TYPES_IN_STRUCTURE = [
   SINGLETON.HOME,
@@ -36,6 +41,12 @@ export const structure: StructureResolver = (S, context) =>
     .title('Content')
     .items([
       homepage(S, context),
+      aboutUs(S, context),
+      editorial(S, context),
+      dataHub(S, context),
+      S.divider(),
+      policyPages(S, context),
+      conservationTools(S, context),
       legalPages(S, context),
       S.divider(),
       globalContent(S, context),
