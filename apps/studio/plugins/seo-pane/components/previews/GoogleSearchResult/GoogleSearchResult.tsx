@@ -23,7 +23,7 @@ export function GoogleSearchResult(props: Props) {
   const imageBuilder = imageUrlBuilder(sanityClient);
   const urlFor = (source: SanityImageSource) => imageBuilder.image(source);
 
-  const width = props.width || 580;
+  const width = props.width || 600;
   const { favicon, siteTitle, siteUrl, pageUrl, metaTitle, metaDescription } = props.seo;
 
   return (
